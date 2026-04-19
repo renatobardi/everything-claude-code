@@ -58,3 +58,18 @@ Follow the formats in CONTRIBUTING.md:
 - Hooks: JSON with matcher and hooks array
 
 File naming: lowercase with hyphens (e.g., `python-reviewer.md`, `tdd-workflow.md`)
+
+<!-- hapai:start -->
+## Hapai Guardrails (enforced by hooks)
+
+These rules are deterministically enforced by hapai hooks. Violations are blocked before execution.
+
+- NEVER commit directly to protected branches (main, master)
+- NEVER add Co-Authored-By or mention AI/Claude/Anthropic in commits, PRs, or docs
+- NEVER run destructive commands (rm -rf, force-push, git reset --hard, DROP TABLE)
+- NEVER edit .env, lockfiles, or CI workflow files without explicit permission
+- ALWAYS create a feature branch before making changes
+- ALWAYS keep commits focused — avoid touching many files/packages in a single commit
+- ALWAYS use taxonomy prefix when creating branches: feat/, fix/, chore/, docs/, refactor/, test/, perf/, style/, ci/, build/, release/, hotfix/
+- ALWAYS follow trunk-based workflow: short-lived branches from main, merged back to main via PR — no long-lived branches
+<!-- hapai:end -->
